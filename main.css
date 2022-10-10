@@ -9,6 +9,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    background-color: white;
+    top: 0;
+    z-index: 1;
 }
 
 .header__logo {
@@ -41,11 +45,25 @@ button {
 
 .about__image {
     width: 500px;
+    position: relative;
 }
 
 .about__sun-image {
     width: 100px;
     height: 100px;
+    position: absolute;
+    animation: rotation 10s linear infinite;
+
+}
+
+@keyframes rotation {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
 }
 
 .about {
@@ -121,7 +139,7 @@ button {
 
 .form label {
     font-size: 18px;
-    font-weight:15px;
+    font-weight:600;
     margin-bottom:15px;
 }
 
@@ -132,6 +150,7 @@ button {
     padding: 0px 20px;
     border-radius:15px;
     border: none;
+    outline: none;
 }
 
 .form__submit {
