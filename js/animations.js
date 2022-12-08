@@ -23,3 +23,32 @@ function initIncreaseNumberAnimation() {
 }
 
 initIncreaseNumberAnimation();
+
+
+/* change "option" tag 
+---------------------------------*/
+
+document.querySelector('#budget').addEventListener('change', function handleSelectChange(event) {
+  if (event.target.value === 'other') {
+    const formContainer = document.createElement('div');
+    formContainer.classList.add('form__group');
+    formContainer.classList.add('form__other-input');
+ 
+    const input = document.createElement('input');
+    input.placeholder = "Введите ваш вариант";
+    input.type = "text";
+      
+    formContainer.appendChild(input);
+    let form = document.querySelector('#form form')
+    let submit = document.querySelector('.form__submit')
+    form.insertBefore(formContainer, submit); 
+  }
+
+  otherInput = document.querySelector(".form__other-input");
+  if (event.target.value !== "other" && Boolean(otherInput)) {
+    // удаляем , раннее добавленное текстовое поле
+    
+    document.querySelector("#form form").removeChild(otherInput);
+  }
+})
+
